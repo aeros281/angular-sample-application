@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { StaffResourceService } from '../staff-resource.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { switchMap } from 'rxjs/operators';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { StaffDetailWrapperComponent } from '../staff-detail-wrapper/staff-detail-wrapper.component';
 
 @Component({
   selector: 'app-staff-detail',
@@ -15,16 +17,15 @@ export class StaffDetailComponent implements OnInit {
 
   constructor(
     private staffService: StaffResourceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public dialogRef: MatDialogRef<StaffDetailWrapperComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
    ) { }
 
   ngOnInit(): void {
-    this.staff = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => { 
-        const staffId: number = parseInt(params.get('id'), 10);
-        return this.staffService.getStaffById(staffId);
-      })
-    );
+    this.staffService.getStaffById(this.data.id).subscribe((value) => {
+      this.staff = value;
+    });
   }
 
 }

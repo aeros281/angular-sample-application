@@ -18,6 +18,8 @@ export class StaffResourceService {
   }
 
   getStaffById(id: number) {
+    console.log(id);
+    console.log(this.staffList[id-1]);
     return of(this.staffList[id - 1]);
   }
 }

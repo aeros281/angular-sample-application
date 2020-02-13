@@ -18,12 +18,14 @@ export class RuleDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.rule = this.route.paramMap.pipe(
+    this.route.paramMap.pipe(
       switchMap((params: ParamMap) => { 
         const ruleId: number = parseInt(params.get('id'), 10);
         return this.ruleService.getRuleById(ruleId);
       })
-    );
+    ).subscribe((value: any) => {
+      this.rule = value;
+    });
   }
 
 }
