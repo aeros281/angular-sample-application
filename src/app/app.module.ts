@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StaffModule } from './staff/staff.module';
-import { CommonModule } from '@angular/common';
 import { RuleModule } from './rule/rule.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,13 +15,12 @@ import { RuleModule } from './rule/rule.module';
     PageNotFoundComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
     FormsModule,
     StaffModule,
     RuleModule,
     AppRoutingModule,
-    RuleModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

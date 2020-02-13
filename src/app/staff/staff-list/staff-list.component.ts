@@ -11,7 +11,8 @@ import { StaffResourceService } from '../staff-resource.service';
 })
 export class StaffListComponent implements OnInit {
 
-  public staffList: Observable<any[]>;
+  displayedColumns: string[] = ['id', 'username', 'email', 'gender', 'dateofbirth', 'operations', ];
+  staffList: Observable<any[]>;
 
   constructor(private staffService: StaffResourceService) {
   }
