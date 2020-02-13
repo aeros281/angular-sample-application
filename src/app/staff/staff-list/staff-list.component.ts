@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FAKE_USERS } from '../fake-user';
+import { of } from 'rxjs/internal/observable/of';
+import { Observable } from 'rxjs/internal/Observable';
+import { StaffResourceService } from '../staff-resource.service';
 
 @Component({
   selector: 'app-staff-list',
@@ -7,17 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StaffListComponent implements OnInit {
 
-  private resources = [
-    {
-      id: 1,
-      name: 'Anh Le Tuan Tran',
-      dateOfBirth: '10/10/1992',
-    }
-  ]
+  public staffList: Observable<any[]>;
 
-  constructor() { }
+  constructor(private staffService: StaffResourceService) {
+  }
 
   ngOnInit(): void {
+    this.staffList = this.staffService.getStaffList();
   }
 
 }
