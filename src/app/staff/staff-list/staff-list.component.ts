@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StaffListComponent implements OnInit {
 
+  private resources = [
+    {
+      id: 1,
+      name: 'Anh Le Tuan Tran',
+      dateOfBirth: '10/10/1992',
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
