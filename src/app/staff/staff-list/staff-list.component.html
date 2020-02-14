@@ -40,7 +40,7 @@
   <app-paginator
     [initialPageNum]="1"
     [totalItemLength]="(pageInfo | async).count"
-    [itemPerPage]="10"
+    [itemPerPage]="itemPerPage"
     (pageChanged)="onPageChanged($event)"
     ></app-paginator>
 

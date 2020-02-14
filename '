@@ -26,7 +26,7 @@ export class StaffListComponent implements OnInit {
 
   onPageChanged(pageNum: number) {
     console.log(pageNum);
-    this.pagedStaffList = this.staffService.getStaffList(pageNum, this.itemPerPage);
+    this.pagedStaffList = this.staffService.getStaffList(pageNum, 10);
     this.pageInfo = this.staffService.getPageInfo();
   }
 
