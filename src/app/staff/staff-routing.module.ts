@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StaffListComponent } from './staff-list/staff-list.component';
-import { StaffDetailComponent } from './staff-detail/staff-detail.component';
 import { StaffHomeComponent } from './staff-home/staff-home.component';
 import { StaffDetailWrapperComponent } from './staff-detail-wrapper/staff-detail-wrapper.component';
 

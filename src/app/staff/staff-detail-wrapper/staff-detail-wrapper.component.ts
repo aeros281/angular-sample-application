@@ -18,10 +18,9 @@ export class StaffDetailWrapperComponent implements OnInit {
       const staffId: number = parseInt(params.get('id'), 10);
 
       const dialogRef = this.dialog.open(StaffDetailComponent, { width: '450px', data: { id: staffId }});
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('closed');
-        this.router.navigate(['../'], { relativeTo: this.route });
-      })
+      dialogRef.afterClosed().subscribe(() => {
+        this.router.navigate(['../'], { relativeTo: this.route, queryParams: this.route.snapshot.queryParams });
+      });
     });
   }
 
