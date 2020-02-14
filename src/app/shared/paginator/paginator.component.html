@@ -1,0 +1,19 @@
+<ul class="paginator">
+  <a (click)="setPage(1)" >&laquo;</a>
+  <a (click)="setPage(currentPage - 1)" >&lt;</a>
+
+  <ng-container *ngFor="let item of pageList" >
+
+    <a (click)="setPage(item.pageNum)"
+       [class.active]="currentPage === item.pageNum"
+       *ngIf="item.isPageLink"
+       >{{ item.text }}</a>
+
+    <a *ngIf="!item.isPageLink"
+       >{{ item.text }}</a>
+
+  </ng-container>
+
+  <a (click)="setPage(currentPage + 1)" >&gt;</a>
+  <a (click)="setPage(numOfPage)" >&raquo;</a>
+</ul>

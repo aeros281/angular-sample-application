@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Algorithm</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ruleItem of ruleList | async" >
+            <td> {{ ruleItem.name }} </td>
+            <td> {{ ruleItem.algorithm }} </td>
+            <td> 
+                <a [routerLink]="['/rule', ruleItem.id]" >Details</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
