@@ -3,22 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StaffModule } from './staff/staff.module';
 import { RuleModule } from './rule/rule.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+
+    SharedModule,
     StaffModule,
     RuleModule,
+
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
