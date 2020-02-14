@@ -7,26 +7,23 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
 })
 export class PaginatorComponent implements OnInit, OnChanges {
 
-  @Input() initialPageNum: number = 1;
   @Input() totalItemLength: number;
   @Input() itemPerPage: number;
-  @Input() maximumPaddingNumber: number = 3;
+  @Input() maximumPaddingNumber = 3;
+  @Input() currentPage: number;
 
   @Output() pageChanged = new EventEmitter<number>();
 
-  currentPage: number;
   numOfPage: number;
   pageList: { text: string, pageNum?: number, isPageLink: boolean }[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.setPage(this.initialPageNum);
     this.setUpPageInfo();
   }
 
   ngOnChanges() {
-    console.log(this);
     this.setUpPageInfo();
   }
 
@@ -39,8 +36,6 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
     if (pageNum < 0 || pageNum > this.numOfPage) { return; }
 
-    this.currentPage = pageNum;
-    this.calculatePageList();
     this.pageChanged.emit(pageNum);
   }
 
@@ -59,9 +54,6 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
     rightCutIndex = (outRangedRight) ? fullPageList.length : rightCutIndex + outRangedLeft;
     leftCutIndex = (outRangedLeft) ? 0 : leftCutIndex  - outRangedRight;
-
-    console.log(leftCutIndex, rightCutIndex);
-    console.log(fullPageList);
 
     this.pageList = fullPageList.slice(leftCutIndex, rightCutIndex).map((value: number) => {
       return {

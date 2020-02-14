@@ -38,7 +38,7 @@
   </table>
 
   <app-paginator
-    [initialPageNum]="1"
+    [currentPage]="currentPage"
     [totalItemLength]="(pageInfo | async).count"
     [itemPerPage]="itemPerPage"
     (pageChanged)="onPageChanged($event)"
