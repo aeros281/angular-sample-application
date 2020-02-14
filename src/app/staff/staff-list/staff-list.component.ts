@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FAKE_USERS } from '../fake-user';
-import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs/internal/Observable';
 import { StaffResourceService } from '../staff-resource.service';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-staff-list',
@@ -12,13 +11,21 @@ import { StaffResourceService } from '../staff-resource.service';
 export class StaffListComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'username', 'email', 'gender', 'dateofbirth', 'operations', ];
-  staffList: Observable<any[]>;
+
+  pagedStaffList: Observable<any[]>;
+  pageInfo: Observable<any>;
 
   constructor(private staffService: StaffResourceService) {
   }
 
   ngOnInit(): void {
-    this.staffList = this.staffService.getStaffList(1, 10);
+    this.onPageChanged(1);
+  }
+
+  onPageChanged(pageNum: number) {
+    console.log(pageNum);
+    this.pagedStaffList = this.staffService.getStaffList(pageNum, 10);
+    this.pageInfo = this.staffService.getPageInfo();
   }
 
 }
