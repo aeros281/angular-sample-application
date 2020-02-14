@@ -18,7 +18,7 @@ export class StaffListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.staffList = this.staffService.getStaffList();
+    this.staffList = this.staffService.getStaffList(1, 10);
   }
 
 }

@@ -13,13 +13,13 @@ export class StaffResourceService {
     this.staffList = FAKE_USERS;
   }
 
-  getStaffList() {
-    return of(this.staffList);
+  getStaffList(pageNumber: number, itemPerPage: number) {
+    const start = pageNumber * itemPerPage;
+    const end = start + itemPerPage;
+    return of(this.staffList.slice(start, end));
   }
 
   getStaffById(id: number) {
-    console.log(id);
-    console.log(this.staffList[id-1]);
     return of(this.staffList[id - 1]);
   }
 }
