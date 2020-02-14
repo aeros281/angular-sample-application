@@ -6,7 +6,7 @@ import { StaffDetailWrapperComponent } from './staff-detail-wrapper/staff-detail
 
 const routes: Routes = [
   {
-    path: 'staff',
+    path: '',
     component: StaffHomeComponent,
     children: [
       {

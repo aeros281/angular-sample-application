@@ -4,6 +4,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 
 const routes: Routes = [
   { path: '', redirectTo: '/staff', pathMatch: 'full' },
+  { path: 'staff', loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule) },
+  { path: 'rule', loadChildren: () => import('./rule/rule.module').then(m => m.RuleModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 

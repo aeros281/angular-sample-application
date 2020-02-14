@@ -5,8 +5,8 @@ import { RuleDetailComponent } from './rule-detail/rule-detail.component';
 
 
 const routes: Routes = [
-  { path: 'rule', component: RuleListComponent },
-  { path: 'rule/:id', component: RuleDetailComponent }
+  { path: '', component: RuleListComponent },
+  { path: ':id', component: RuleDetailComponent }
 ];
 
 @NgModule({
