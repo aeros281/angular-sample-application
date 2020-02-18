@@ -1,0 +1,6 @@
+<ng-container *ngIf="errorMessages.length > 0" >
+  <p>Error for {{ controlName }}</p>
+  <ul>
+    <li *ngFor="let error of errorMessages">{{ error }}</li>
+  </ul>
+</ng-container>

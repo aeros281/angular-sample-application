@@ -14,6 +14,7 @@ import { StaffHomeComponent } from './staff-home/staff-home.component';
 import { StaffDetailWrapperComponent } from './staff-detail-wrapper/staff-detail-wrapper.component';
 import { StaffCreateWrapperComponent } from './staff-create-wrapper/staff-create-wrapper.component';
 import { StaffCreateComponent } from './staff-create/staff-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { StaffCreateComponent } from './staff-create/staff-create.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SharedModule,
     MatTableModule,
     MatDialogModule,

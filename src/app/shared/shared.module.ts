@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { RouterModule } from '@angular/router';
 import {PageNotFoundComponent} from 'src/app/shared/page-not-found/page-not-found.component';
+import { FormErrorOutputComponent } from './form-error-output/form-error-output.component';
+import { FormErrorOutputSingleComponent } from './form-error-output-single/form-error-output-single.component';
 
 
 
@@ -10,6 +12,8 @@ import {PageNotFoundComponent} from 'src/app/shared/page-not-found/page-not-foun
   declarations: [
     PaginatorComponent,
     PageNotFoundComponent,
+    FormErrorOutputComponent,
+    FormErrorOutputSingleComponent,
   ],
   imports: [
     CommonModule,
@@ -17,7 +21,9 @@ import {PageNotFoundComponent} from 'src/app/shared/page-not-found/page-not-foun
   ],
   exports: [
     PaginatorComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FormErrorOutputComponent,
+    FormErrorOutputSingleComponent
   ]
 })
 export class SharedModule { }

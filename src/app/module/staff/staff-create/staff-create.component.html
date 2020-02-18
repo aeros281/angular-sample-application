@@ -1,1 +1,37 @@
-<p>staff-create works!</p>
+<h3>Create Staff</h3>
+<div class="form-container" >
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit()" >
+
+    <div class="form-group">
+      <label>
+        First Name:
+      </label>
+      <input type="text" name="first-name" formControlName="firstName" />
+    </div>
+
+    <div class="form-group">
+      <label>
+        Last Name:
+      </label>
+      <input type="text" name="last-name" formControlName="lastName" />
+    </div>
+
+    <div class="form-group">
+      <label>
+        Email:
+      </label>
+      <input type="text" name="email" formControlName="email" />
+    </div>
+
+    <div class="form-group">
+      <label>
+        Staff Type ID:
+      </label>
+      <input type="text" name="staff-type-id" formControlName="staffTypeId" />
+    </div>
+
+    <input type="submit" value="Add new staff" [disabled]="!createForm.valid" />
+  </form>
+  <app-form-error-output [form]="createForm" ></app-form-error-output>
+</div>
+

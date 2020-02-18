@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+div.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+div.form-group label {
+  margin-right: 10px;
+}
+
+div.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
