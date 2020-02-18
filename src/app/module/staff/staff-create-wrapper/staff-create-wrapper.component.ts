@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {Router, ActivatedRoute } from '@angular/router';
-import {StaffCreateComponent} from 'src/app/staff/staff-create/staff-create.component';
+
+import {StaffCreateComponent} from '../staff-create/staff-create.component';
 
 @Component({
   selector: 'app-staff-create-wrapper',
