@@ -17,7 +17,7 @@ export class StaffDetailWrapperComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       const staffId: number = parseInt(params.get('id'), 10);
 
-      const dialogRef = this.dialog.open(StaffDetailComponent, { width: '450px', data: { id: staffId }});
+      const dialogRef = this.dialog.open(StaffDetailComponent, { data: { id: staffId }});
       dialogRef.afterClosed().subscribe(() => {
         this.router.navigate(['../'], { relativeTo: this.route, queryParams: this.route.snapshot.queryParams });
       });
